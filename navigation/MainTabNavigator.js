@@ -19,7 +19,7 @@ HomeStack.navigationOptions = {
   tabBarLabel: "Home",
   tabBarOptions: {
     labelStyle: {
-      marginTop: 25
+      marginTop: 0
     }
   },
   tabBarIcon: ({ focused }) => (
@@ -42,7 +42,7 @@ LinksStack.navigationOptions = {
   tabBarLabel: "My Club",
   tabBarOptions: {
     labelStyle: {
-      marginTop: 25
+      marginTop: 0
     }
   },
   tabBarIcon: ({ focused }) => (
@@ -61,7 +61,7 @@ SettingsStack.navigationOptions = {
   tabBarLabel: "Ratings",
   tabBarOptions: {
     labelStyle: {
-      marginTop: 25
+      marginTop: 0
     }
   },
   tabBarIcon: ({ focused }) => (
@@ -72,8 +72,8 @@ SettingsStack.navigationOptions = {
   )
 };
 
-// render navbar on top
-export default createMaterialTopTabNavigator({
+// render navbar on top or bottom
+export default createBottomTabNavigator({
   HomeStack,
   LinksStack,
   SettingsStack
