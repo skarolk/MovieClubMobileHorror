@@ -8,7 +8,7 @@ import {
 
 import TabBarIcon from "../components/TabBarIcon";
 import HomeScreen from "../screens/HomeScreen";
-import LinksScreen from "../screens/LinksScreen";
+import MovieLotteryScreen from "../screens/MovieLotteryScreen";
 import SettingsScreen from "../screens/SettingsScreen";
 
 const HomeStack = createStackNavigator({
@@ -16,7 +16,7 @@ const HomeStack = createStackNavigator({
 });
 
 HomeStack.navigationOptions = {
-  tabBarLabel: "Home",
+  tabBarLabel: "Weekly Club",
   tabBarOptions: {
     labelStyle: {
       marginTop: 0
@@ -34,12 +34,12 @@ HomeStack.navigationOptions = {
   )
 };
 
-const LinksStack = createStackNavigator({
-  Links: LinksScreen
+const MovieLotteryStack = createStackNavigator({
+  MovieLottery: MovieLotteryScreen
 });
 
-LinksStack.navigationOptions = {
-  tabBarLabel: "My Club",
+MovieLotteryStack.navigationOptions = {
+  tabBarLabel: "Movie Lottery",
   tabBarOptions: {
     labelStyle: {
       marginTop: 0
@@ -58,7 +58,7 @@ const SettingsStack = createStackNavigator({
 });
 
 SettingsStack.navigationOptions = {
-  tabBarLabel: "Ratings",
+  tabBarLabel: "Rate Movies",
   tabBarOptions: {
     labelStyle: {
       marginTop: 0
@@ -75,12 +75,6 @@ SettingsStack.navigationOptions = {
 // render navbar on top or bottom
 export default createBottomTabNavigator({
   HomeStack,
-  LinksStack,
+  MovieLotteryStack,
   SettingsStack
 });
-// render navbar on bottom
-// export default createBottomTabNavigator({
-//   HomeStack,
-//   LinksStack,
-//   SettingsStack
-// });
