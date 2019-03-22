@@ -8,6 +8,11 @@ class MovieLotteryScreen extends React.Component {
   };
 
   render() {
+    console.log(
+      "%cMovieLotteryComponent PROPS:",
+      "color: red; font-weight: bold;",
+      "hello"
+    );
     return <ScrollView style={styles.container} />;
   }
 }
@@ -20,4 +25,13 @@ const styles = StyleSheet.create({
   }
 });
 
-export default connect()(MovieLotteryScreen);
+const mapStateToProps = state => {
+  console.log(
+    "%cMovieLotteryComponent STATE:",
+    "color: red; font-weight: bold;",
+    "hello"
+  );
+  return {};
+};
+
+export default connect(mapStateToProps)(MovieLotteryScreen);
