@@ -24,6 +24,11 @@ class MovieLotteryScreen extends React.Component {
             What should I watch?
           </Text>
         </TouchableOpacity>
+        <Text>
+          {this.props.movie.name
+            ? this.props.movie.name
+            : "No movie in redux store"}
+        </Text>
       </ScrollView>
     );
   }
@@ -55,10 +60,10 @@ const mapStateToProps = state => {
   console.log(
     "%cMovieLotteryComponent STATE:",
     "color: red; font-weight: bold;",
-    state.MovieLottery
+    state
   );
   return {
-    movieLottery: state.movieLottery
+    movie: state.movieLottery
   };
 };
 
