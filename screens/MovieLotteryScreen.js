@@ -55,9 +55,11 @@ const mapStateToProps = state => {
   console.log(
     "%cMovieLotteryComponent STATE:",
     "color: red; font-weight: bold;",
-    state
+    state.MovieLottery
   );
-  return {};
+  return {
+    movieLottery: state.movieLottery
+  };
 };
 
 export default connect(
