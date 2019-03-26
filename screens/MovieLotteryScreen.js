@@ -2,6 +2,7 @@ import React from "react";
 import { ScrollView, StyleSheet, Text, TouchableOpacity } from "react-native";
 import { connect } from "react-redux";
 import * as actions from "../src/actions";
+import BackgroundPoster from "../components/BackgroundPoster";
 
 class MovieLotteryScreen extends React.Component {
   static navigationOptions = {
@@ -15,7 +16,7 @@ class MovieLotteryScreen extends React.Component {
       this.props
     );
     return (
-      <ScrollView style={styles.container}>
+      <React.Fragment>
         <TouchableOpacity
           style={[styles.button]}
           onPress={() => this.props.getRandomMovie()}
@@ -24,12 +25,8 @@ class MovieLotteryScreen extends React.Component {
             What should I watch?
           </Text>
         </TouchableOpacity>
-        <Text>
-          {this.props.movie.name
-            ? this.props.movie.name
-            : "No movie in redux store"}
-        </Text>
-      </ScrollView>
+        <BackgroundPoster />
+      </React.Fragment>
     );
   }
 }
@@ -56,18 +53,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const mapStateToProps = state => {
-  console.log(
-    "%cMovieLotteryComponent STATE:",
-    "color: red; font-weight: bold;",
-    state
-  );
-  return {
-    movie: state.movieLottery
-  };
-};
-
 export default connect(
-  mapStateToProps,
+  null,
   actions
 )(MovieLotteryScreen);
