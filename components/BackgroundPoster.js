@@ -10,11 +10,7 @@ const BackgroundPoster = props => {
       source={{ uri: props.movie.poster }}
       style={styles.imageContainer}
       imageStyle={styles.image}
-    >
-      <View style={styles.detailsContainer}>
-        <Text>{props.movie.name}</Text>
-      </View>
-    </ImageBackground>
+    />
   ) : null;
 };
 
@@ -30,7 +26,7 @@ const styles = StyleSheet.create({
     flex: 1,
     width: null,
     height: null,
-    resizeMode: "cover"
+    resizeMode: "contain"
   },
   detailsContainer: {
     flex: 1,
