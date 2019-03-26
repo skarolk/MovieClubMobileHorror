@@ -1,45 +1,29 @@
 import React from "react";
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { connect } from "react-redux";
 import * as actions from "../src/actions";
 
+import { Button } from "react-native-elements";
+
 const CustomButton = props => {
-  console.log(
-    "%cCustomButtonComponent PROPS:",
-    "color: red; font-weight: bold;",
-    this.props
-  );
   return (
-    <TouchableOpacity
-      style={[styles.button]}
-      onPress={() => props.getRandomMovie()}
-    >
-      <Text style={[styles.buttonText, styles.large]}>
-        What should I watch?
-      </Text>
-    </TouchableOpacity>
+    <View style={styles.button}>
+      <Button
+        title={props.text}
+        onPress={() => props.getRandomMovie()}
+        raised
+      />
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingTop: 15,
-    backgroundColor: "#fff"
-  },
   button: {
-    marginTop: 10,
-    minWidth: 100,
-    borderWidth: 2,
-    borderRadius: 3
-  },
-  large: {
-    fontSize: 16,
-    padding: 10
-  },
-  buttonText: {
-    textAlign: "center",
-    fontWeight: "bold"
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "flex-end",
+    justifyContent: "center",
+    marginBottom: 30
   }
 });
 

@@ -1,7 +1,9 @@
 import React from "react";
-import { View, StyleSheet, Text, ImageBackground } from "react-native";
+import { StyleSheet, ImageBackground } from "react-native";
 import { connect } from "react-redux";
 import * as actions from "../src/actions";
+
+import CustomButton from "./CustomButton";
 
 const BackgroundPoster = props => {
   console.log(props);
@@ -10,15 +12,16 @@ const BackgroundPoster = props => {
       source={{ uri: props.movie.poster }}
       style={styles.imageContainer}
       imageStyle={styles.image}
-    />
-  ) : null;
+      onTouch={() => props.getRandomMovie()}
+    >
+      <CustomButton text={"Scary Movie Lottery!"} />
+    </ImageBackground>
+  ) : (
+    <CustomButton text={"Scary Movie Lottery!"} />
+  );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#34495E"
-  },
   imageContainer: {
     flex: 1
   },
@@ -26,13 +29,7 @@ const styles = StyleSheet.create({
     flex: 1,
     width: null,
     height: null,
-    resizeMode: "contain"
-  },
-  detailsContainer: {
-    flex: 1,
-    justifyContent: "center",
-    backgroundColor: "rgba(0,0,0,0.2)",
-    paddingHorizontal: 20
+    resizeMode: "cover"
   }
 });
 
