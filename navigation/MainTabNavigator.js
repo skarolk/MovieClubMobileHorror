@@ -22,10 +22,12 @@ HomeStack.navigationOptions = {
   tabBarOptions: {
     activeTintColor: tintColor,
     inactiveTintColor: defaultColor,
+    labelStyle: {
+      paddingBottom: 52
+    },
     tabStyle: {
       backgroundColor: "#1A1A1D",
-      height: 56,
-      elevation: null
+      height: 100
     },
     tabBarStyle: "light-content"
   },
@@ -50,10 +52,12 @@ MovieLotteryStack.navigationOptions = {
   tabBarOptions: {
     activeTintColor: tintColor,
     inactiveTintColor: defaultColor,
+    labelStyle: {
+      paddingBottom: 52
+    },
     tabStyle: {
       backgroundColor: "#1A1A1D",
-      height: 56,
-      elevation: null
+      height: 100
     }
   },
   tabBarIcon: ({ focused }) => (
@@ -73,10 +77,12 @@ SettingsStack.navigationOptions = {
   tabBarOptions: {
     activeTintColor: tintColor,
     inactiveTintColor: defaultColor,
+    labelStyle: {
+      paddingBottom: 52
+    },
     tabStyle: {
       backgroundColor: "#1A1A1D",
-      height: 56,
-      elevation: null
+      height: 100
     }
   },
   tabBarIcon: ({ focused }) => (
