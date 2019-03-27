@@ -26,7 +26,8 @@ HomeStack.navigationOptions = {
       backgroundColor: "#1A1A1D",
       height: 56,
       elevation: null
-    }
+    },
+    tabBarStyle: "light-content"
   },
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
