@@ -10,8 +10,16 @@ const CustomButton = props => {
     <View style={styles.button}>
       <Button
         title={props.text}
-        buttonStyle={{ backgroundColor: "#C3073F", borderRadius: 10 }}
+        buttonStyle={{
+          backgroundColor: "#C3073F",
+          borderRadius: 10,
+          fontWeight: "bold",
+          paddingBottom: 12,
+          paddingLeft: 10,
+          paddingRight: 10
+        }}
         onPress={() => props.getRandomMovie()}
+        raised
       />
     </View>
   );

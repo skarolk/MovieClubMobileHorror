@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, ImageBackground, Text } from "react-native";
+import { StyleSheet, ImageBackground, Text, View } from "react-native";
 import { connect } from "react-redux";
 import * as actions from "../src/actions";
 
@@ -13,7 +13,11 @@ const BackgroundPoster = props => {
       style={styles.imageContainer}
       imageStyle={styles.image}
     >
-      <Text style={styles.title}>{props.movie.name}</Text>
+      <View style={styles.titleContainer}>
+        <Text adjustsFontSizeToFit numberOfLines={1} style={styles.title}>
+          {props.movie.name}
+        </Text>
+      </View>
       <CustomButton text={"Scary Movie Lottery!"} />
     </ImageBackground>
   ) : (
@@ -23,21 +27,27 @@ const BackgroundPoster = props => {
 
 const styles = StyleSheet.create({
   imageContainer: {
-    flex: 1,
-    marginLeft: "10%",
-    marginRight: "10%"
+    flex: 1
   },
   image: {
-    resizeMode: "contain"
+    resizeMode: "cover"
+  },
+  titleContainer: {
+    backgroundColor: "rgba(26,26,29,.8)",
+    height: 80,
+    width: "100%",
+    position: "absolute",
+    top: "10%",
+    justifyContent: "center",
+    alignItems: "center"
   },
   title: {
     color: "white",
-    fontSize: 25,
+    fontSize: 40,
     textAlign: "center",
-    marginTop: "10%",
-    backgroundColor: "#1A1A1D",
-    paddingTop: 15,
-    paddingBottom: 20
+    textAlignVertical: "center",
+    paddingLeft: 10,
+    paddingRight: 10
   }
 });
 
