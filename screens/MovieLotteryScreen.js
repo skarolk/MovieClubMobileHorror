@@ -31,7 +31,7 @@ class MovieLotteryScreen extends React.Component {
 const styles = StyleSheet.create({
   imageContainer: {
     flex: 1,
-    backgroundColor: "#4E4E50"
+    backgroundColor: "black"
   }
 });
 
