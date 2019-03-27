@@ -18,10 +18,10 @@ const BackgroundPoster = props => {
           {props.movie.name}
         </Text>
       </View>
-      <CustomButton text={"Scary Movie Lottery!"} />
+      <CustomButton text={"Try Your Luck!"} />
     </ImageBackground>
   ) : (
-    <CustomButton text={"Scary Movie Lottery!"} />
+    <CustomButton text={"Try Your Luck!"} />
   );
 };
 
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     resizeMode: "cover"
   },
   titleContainer: {
-    backgroundColor: "rgba(26,26,29,.7)",
+    backgroundColor: "rgba(26,26,29,.75)",
     height: 80,
     width: "100%",
     position: "absolute",
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
   },
   title: {
     color: "white",
-    fontSize: 40,
+    fontSize: 35,
     textAlign: "center",
     textAlignVertical: "center",
     paddingLeft: 10,

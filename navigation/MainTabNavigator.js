@@ -2,14 +2,16 @@ import React from "react";
 import { Platform } from "react-native";
 import {
   createStackNavigator,
-  createBottomTabNavigator,
-  createMaterialTopTabNavigator
+  createBottomTabNavigator
 } from "react-navigation";
 
 import TabBarIcon from "../components/TabBarIcon";
 import HomeScreen from "../screens/HomeScreen";
 import MovieLotteryScreen from "../screens/MovieLotteryScreen";
 import SettingsScreen from "../screens/SettingsScreen";
+
+const tintColor = "#C3073F";
+const defaultColor = "white";
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen
@@ -18,8 +20,12 @@ const HomeStack = createStackNavigator({
 HomeStack.navigationOptions = {
   tabBarLabel: "Weekly Club",
   tabBarOptions: {
-    labelStyle: {
-      marginTop: 0
+    activeTintColor: tintColor,
+    inactiveTintColor: defaultColor,
+    tabStyle: {
+      backgroundColor: "#1A1A1D",
+      height: 56,
+      elevation: null
     }
   },
   tabBarIcon: ({ focused }) => (
@@ -41,8 +47,12 @@ const MovieLotteryStack = createStackNavigator({
 MovieLotteryStack.navigationOptions = {
   tabBarLabel: "Movie Lottery",
   tabBarOptions: {
-    labelStyle: {
-      marginTop: 0
+    activeTintColor: tintColor,
+    inactiveTintColor: defaultColor,
+    tabStyle: {
+      backgroundColor: "#1A1A1D",
+      height: 56,
+      elevation: null
     }
   },
   tabBarIcon: ({ focused }) => (
@@ -60,8 +70,12 @@ const SettingsStack = createStackNavigator({
 SettingsStack.navigationOptions = {
   tabBarLabel: "Rate Movies",
   tabBarOptions: {
-    labelStyle: {
-      marginTop: 0
+    activeTintColor: tintColor,
+    inactiveTintColor: defaultColor,
+    tabStyle: {
+      backgroundColor: "#1A1A1D",
+      height: 56,
+      elevation: null
     }
   },
   tabBarIcon: ({ focused }) => (
@@ -73,6 +87,7 @@ SettingsStack.navigationOptions = {
 };
 
 // render navbar on top or bottom
+// createMaterialTopTabNavigator
 export default createBottomTabNavigator({
   HomeStack,
   MovieLotteryStack,

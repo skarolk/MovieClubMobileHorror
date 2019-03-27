@@ -7,7 +7,15 @@ import BackgroundPoster from "../components/BackgroundPoster";
 
 class MovieLotteryScreen extends React.Component {
   static navigationOptions = {
-    title: "Movie Lottery"
+    title: "Scary Movie Lottery!",
+    headerTitleStyle: {
+      color: "white"
+    },
+    headerTintColor: "white",
+    headerStyle: {
+      backgroundColor: "#1A1A1D",
+      elevation: null
+    }
   };
 
   render() {

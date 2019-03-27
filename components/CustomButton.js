@@ -13,10 +13,10 @@ const CustomButton = props => {
         buttonStyle={{
           backgroundColor: "#C3073F",
           borderRadius: 10,
-          fontWeight: "bold",
-          paddingBottom: 12,
-          paddingLeft: 10,
-          paddingRight: 10
+          paddingTop: 12,
+          paddingBottom: 15,
+          paddingLeft: 60,
+          paddingRight: 60
         }}
         onPress={() => props.getRandomMovie()}
         raised
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "flex-end",
     alignItems: "center",
-    bottom: "5%"
+    bottom: "6%"
   }
 });
 
