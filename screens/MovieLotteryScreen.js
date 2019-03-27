@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { StyleSheet, View } from "react-native";
 import * as actions from "../src/actions";
 
 import BackgroundPoster from "../components/BackgroundPoster";
@@ -12,12 +13,19 @@ class MovieLotteryScreen extends React.Component {
   render() {
     console.log(this.props);
     return (
-      <React.Fragment>
+      <View style={styles.imageContainer}>
         <BackgroundPoster />
-      </React.Fragment>
+      </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  imageContainer: {
+    flex: 1,
+    backgroundColor: "#1A1A1D"
+  }
+});
 
 const mapStateToProps = state => {
   console.log(

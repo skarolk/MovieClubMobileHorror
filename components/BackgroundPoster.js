@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, ImageBackground } from "react-native";
+import { StyleSheet, ImageBackground, Text } from "react-native";
 import { connect } from "react-redux";
 import * as actions from "../src/actions";
 
@@ -12,8 +12,8 @@ const BackgroundPoster = props => {
       source={{ uri: props.movie.poster }}
       style={styles.imageContainer}
       imageStyle={styles.image}
-      onTouch={() => props.getRandomMovie()}
     >
+      <Text style={styles.title}>{props.movie.name}</Text>
       <CustomButton text={"Scary Movie Lottery!"} />
     </ImageBackground>
   ) : (
@@ -23,13 +23,21 @@ const BackgroundPoster = props => {
 
 const styles = StyleSheet.create({
   imageContainer: {
-    flex: 1
+    flex: 1,
+    marginLeft: "10%",
+    marginRight: "10%"
   },
   image: {
-    flex: 1,
-    width: null,
-    height: null,
-    resizeMode: "cover"
+    resizeMode: "contain"
+  },
+  title: {
+    color: "white",
+    fontSize: 25,
+    textAlign: "center",
+    marginTop: "10%",
+    backgroundColor: "#1A1A1D",
+    paddingTop: 15,
+    paddingBottom: 20
   }
 });
 

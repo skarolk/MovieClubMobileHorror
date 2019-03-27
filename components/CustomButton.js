@@ -10,8 +10,8 @@ const CustomButton = props => {
     <View style={styles.button}>
       <Button
         title={props.text}
+        buttonStyle={{ backgroundColor: "#C3073F", borderRadius: 10 }}
         onPress={() => props.getRandomMovie()}
-        raised
       />
     </View>
   );
@@ -20,10 +20,9 @@ const CustomButton = props => {
 const styles = StyleSheet.create({
   button: {
     flex: 1,
-    flexDirection: "row",
-    alignItems: "flex-end",
-    justifyContent: "center",
-    marginBottom: 30
+    justifyContent: "flex-end",
+    alignItems: "center",
+    bottom: "5%"
   }
 });
 
