@@ -30,7 +30,8 @@ const styles = StyleSheet.create({
     flex: 1
   },
   image: {
-    resizeMode: "cover"
+    resizeMode: "cover",
+    backgroundColor: "black"
   },
   titleContainer: {
     backgroundColor: "rgba(26,26,29,.75)",

@@ -6,8 +6,7 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  View,
-  StatusBar
+  View
 } from "react-native";
 import { WebBrowser } from "expo";
 
@@ -29,7 +28,6 @@ export default class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <StatusBar barStyle="light-content" />
         <ScrollView
           style={styles.container}
           contentContainerStyle={styles.contentContainer}
