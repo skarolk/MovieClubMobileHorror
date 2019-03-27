@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     resizeMode: "cover"
   },
   titleContainer: {
-    backgroundColor: "rgba(26,26,29,.8)",
+    backgroundColor: "rgba(26,26,29,.7)",
     height: 80,
     width: "100%",
     position: "absolute",
