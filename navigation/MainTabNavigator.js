@@ -23,12 +23,13 @@ HomeStack.navigationOptions = {
     activeTintColor: tintColor,
     inactiveTintColor: defaultColor,
     labelStyle: {
-      paddingBottom: 52
+      paddingBottom: 55
     },
     tabStyle: {
       backgroundColor: "#1A1A1D",
-      height: 100
+      height: 105
     },
+    borderTopColor: "transparent",
     tabBarStyle: "light-content"
   },
   tabBarIcon: ({ focused }) => (
@@ -53,11 +54,11 @@ MovieLotteryStack.navigationOptions = {
     activeTintColor: tintColor,
     inactiveTintColor: defaultColor,
     labelStyle: {
-      paddingBottom: 52
+      paddingBottom: 55
     },
     tabStyle: {
       backgroundColor: "#1A1A1D",
-      height: 100
+      height: 105
     }
   },
   tabBarIcon: ({ focused }) => (
@@ -78,11 +79,11 @@ SettingsStack.navigationOptions = {
     activeTintColor: tintColor,
     inactiveTintColor: defaultColor,
     labelStyle: {
-      paddingBottom: 52
+      paddingBottom: 55
     },
     tabStyle: {
       backgroundColor: "#1A1A1D",
-      height: 100
+      height: 105
     }
   },
   tabBarIcon: ({ focused }) => (
@@ -96,7 +97,7 @@ SettingsStack.navigationOptions = {
 // render navbar on top or bottom
 // createMaterialTopTabNavigator
 export default createBottomTabNavigator({
-  HomeStack,
   MovieLotteryStack,
+  HomeStack,
   SettingsStack
 });

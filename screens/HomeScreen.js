@@ -21,7 +21,7 @@ export default class HomeScreen extends React.Component {
     headerTintColor: "white",
     headerStyle: {
       backgroundColor: "#1A1A1D",
-      elevation: null
+      borderBottomWidth: 0
     }
   };
 
