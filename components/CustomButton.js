@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "flex-end",
     alignItems: "center",
-    bottom: "6%"
+    bottom: "5%"
   }
 });
 
