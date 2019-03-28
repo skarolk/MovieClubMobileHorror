@@ -29,8 +29,10 @@ HomeStack.navigationOptions = {
       backgroundColor: "#1A1A1D",
       height: 105
     },
-    borderTopColor: "transparent",
-    tabBarStyle: "light-content"
+    style: {
+      borderTopWidth: 0,
+      elevation: 0
+    }
   },
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
@@ -59,7 +61,8 @@ MovieLotteryStack.navigationOptions = {
     tabStyle: {
       backgroundColor: "#1A1A1D",
       height: 105
-    }
+    },
+    style: { borderTopWidth: 0, elevation: 0 }
   },
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
@@ -84,6 +87,10 @@ SettingsStack.navigationOptions = {
     tabStyle: {
       backgroundColor: "#1A1A1D",
       height: 105
+    },
+    style: {
+      borderTopWidth: 0,
+      elevation: 0
     }
   },
   tabBarIcon: ({ focused }) => (
