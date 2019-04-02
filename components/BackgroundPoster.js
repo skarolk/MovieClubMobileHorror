@@ -35,8 +35,8 @@ const BackgroundPoster = props => {
         size={35}
         style={{
           position: "absolute",
-          top: "13.2%",
-          right: "4%"
+          top: "13.1%",
+          right: "3%"
         }}
         color={"#C3073F"}
         onPress={() => {}}
