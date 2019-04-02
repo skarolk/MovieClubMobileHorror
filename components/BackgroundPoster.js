@@ -21,28 +21,30 @@ const BackgroundPoster = props => {
       imageStyle={styles.image}
     >
       <View style={styles.titleContainer}>
-        <Text adjustsFontSizeToFit numberOfLines={1} style={styles.title}>
-          {props.movie.name}
+        <Text
+          adjustsFontSizeToFit
+          numberOfLines={1}
+          style={styles.title}
+          onPress={() => {
+            console.log("hello");
+          }}
+        >
+          {props.movie.name + " "}
+          <Icon.Ionicons
+            name={
+              Platform.OS === "ios"
+                ? "ios-information-circle"
+                : "md-information-circle"
+            }
+            size={32}
+            color={"#C3073F"}
+            onPress={() => {
+              console.log("hello");
+            }}
+          />
         </Text>
       </View>
       <CustomButton text={"Try Your Luck!"} />
-      <Icon.Ionicons
-        name={
-          Platform.OS === "ios"
-            ? "ios-information-circle"
-            : "md-information-circle"
-        }
-        size={35}
-        style={{
-          position: "absolute",
-          top: "13.1%",
-          right: "3%"
-        }}
-        color={"#C3073F"}
-        onPress={() => {
-          console.log("hello");
-        }}
-      />
     </ImageBackground>
   ) : (
     <CustomButton text={"Try Your Luck!"} style={styles.firstButton} />
@@ -71,11 +73,8 @@ const styles = StyleSheet.create({
     fontSize: 35,
     textAlign: "center",
     textAlignVertical: "center",
-    paddingLeft: 50,
-    paddingRight: 50
-  },
-  Button: {
-    zIndex: 100
+    paddingLeft: 20,
+    paddingRight: 20
   }
 });
 
@@ -94,3 +93,24 @@ export default connect(
   mapStateToProps,
   actions
 )(BackgroundPoster);
+
+// retired fixed info button component
+{
+  /* <Icon.Ionicons
+  name={
+    Platform.OS === "ios"
+      ? "ios-information-circle"
+      : "md-information-circle"
+  }
+  size={35}
+  style={{
+    position: "absolute",
+    top: "13.1%",
+    right: "3%"
+  }}
+  color={"#C3073F"}
+  onPress={() => {
+    console.log("hello");
+  }}
+/> */
+}
