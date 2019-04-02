@@ -1,7 +1,14 @@
 import React from "react";
-import { StyleSheet, ImageBackground, Text, View } from "react-native";
+import {
+  StyleSheet,
+  ImageBackground,
+  Text,
+  View,
+  Platform
+} from "react-native";
 import { connect } from "react-redux";
 import * as actions from "../src/actions";
+import { Icon } from "expo";
 
 import CustomButton from "./CustomButton";
 
@@ -19,9 +26,24 @@ const BackgroundPoster = props => {
         </Text>
       </View>
       <CustomButton text={"Try Your Luck!"} />
+      <Icon.Ionicons
+        name={
+          Platform.OS === "ios"
+            ? "ios-information-circle"
+            : "md-information-circle"
+        }
+        size={35}
+        style={{
+          position: "absolute",
+          top: "13.2%",
+          right: "4%"
+        }}
+        color={"#C3073F"}
+        onPress={() => {}}
+      />
     </ImageBackground>
   ) : (
-    <CustomButton text={"Try Your Luck!"} />
+    <CustomButton text={"Try Your Luck!"} style={styles.firstButton} />
   );
 };
 
@@ -47,8 +69,11 @@ const styles = StyleSheet.create({
     fontSize: 35,
     textAlign: "center",
     textAlignVertical: "center",
-    paddingLeft: 10,
-    paddingRight: 10
+    paddingLeft: 50,
+    paddingRight: 50
+  },
+  Button: {
+    zIndex: 100
   }
 });
 
