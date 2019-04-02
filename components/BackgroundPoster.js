@@ -39,7 +39,9 @@ const BackgroundPoster = props => {
           right: "3%"
         }}
         color={"#C3073F"}
-        onPress={() => {}}
+        onPress={() => {
+          console.log("hello");
+        }}
       />
     </ImageBackground>
   ) : (
