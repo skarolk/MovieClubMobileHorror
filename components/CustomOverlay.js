@@ -9,10 +9,8 @@ const CustomOverlay = props => {
   return (
     <Overlay
       isVisible={props.visible}
-      windowBackgroundColor="rgba(255, 255, 255, .5)"
-      overlayBackgroundColor="red"
-      width="auto"
-      height="auto"
+      width="80%"
+      height="60%"
       onBackdropPress={() => props.toggleInfoWindow()}
     >
       <Text>Hello from Overlay!</Text>
