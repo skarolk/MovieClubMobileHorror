@@ -7,7 +7,14 @@ import * as actions from "../src/actions";
 const CustomOverlay = props => {
   console.log("hitting the custom overlay");
   return (
-    <Overlay isVisible={props.visible}>
+    <Overlay
+      isVisible={props.visible}
+      windowBackgroundColor="rgba(255, 255, 255, .5)"
+      overlayBackgroundColor="red"
+      width="auto"
+      height="auto"
+      onBackdropPress={() => props.toggleInfoWindow()}
+    >
       <Text>Hello from Overlay!</Text>
     </Overlay>
   );

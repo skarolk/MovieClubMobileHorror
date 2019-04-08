@@ -13,48 +13,70 @@ import { Icon } from "expo";
 import CustomButton from "./CustomButton";
 import CustomOverlay from "./CustomOverlay";
 
-const BackgroundPoster = props => {
-  const renderInfoWindow = () => {
-    console.log(props.movie.name);
-    return <CustomOverlay visible={false} />;
+class BackgroundPoster extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      toggledOverlay: false
+    };
+  }
+
+  renderInfoWindow = () => {
+    console.log(this.props.movie.name);
+
+    return (
+      <CustomOverlay
+        visible={this.state.toggledOverlay}
+        toggleInfoWindow={this.toggleInfoWindow}
+      />
+    );
   };
 
-  console.log(props);
-  return props.movie.name ? (
-    <React.Fragment>
-      <ImageBackground
-        source={{ uri: props.movie.poster }}
-        style={styles.imageContainer}
-        imageStyle={styles.image}
-      >
-        <CustomButton text={"Try Your Luck!"} />
-      </ImageBackground>
-      <View style={styles.titleContainer} pointerEvent="box-only">
-        <Text
-          adjustsFontSizeToFit
-          numberOfLines={1}
-          style={styles.title}
-          onPress={() => renderInfoWindow()}
+  toggleInfoWindow = () => {
+    this.setState({
+      toggledOverlay: !this.state.toggledOverlay
+    });
+  };
+
+  render() {
+    console.log(this.props);
+    return this.props.movie.name ? (
+      <React.Fragment>
+        <ImageBackground
+          source={{ uri: this.props.movie.poster }}
+          style={styles.imageContainer}
+          imageStyle={styles.image}
         >
-          {props.movie.name + " "}
-          <Icon.Ionicons
-            name={
-              Platform.OS === "ios"
-                ? "ios-information-circle"
-                : "md-information-circle"
-            }
-            size={32}
-            color={"#C3073F"}
-            style={{ zIndex: 100 }}
-          />
-        </Text>
-      </View>
-      {renderInfoWindow()}
-    </React.Fragment>
-  ) : (
-    <CustomButton text={"Try Your Luck!"} style={styles.firstButton} />
-  );
-};
+          <CustomButton text={"Try Your Luck!"} />
+        </ImageBackground>
+        <View style={styles.titleContainer} pointerEvent="box-only">
+          <Text
+            adjustsFontSizeToFit
+            numberOfLines={1}
+            style={styles.title}
+            onPress={() => this.toggleInfoWindow()}
+          >
+            {this.props.movie.name + " "}
+            <Icon.Ionicons
+              name={
+                Platform.OS === "ios"
+                  ? "ios-information-circle"
+                  : "md-information-circle"
+              }
+              size={32}
+              color={"#C3073F"}
+              style={{ zIndex: 100 }}
+            />
+          </Text>
+        </View>
+        {this.renderInfoWindow()}
+      </React.Fragment>
+    ) : (
+      <CustomButton text={"Try Your Luck!"} style={styles.firstButton} />
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   imageContainer: {
