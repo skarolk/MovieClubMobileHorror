@@ -11,8 +11,14 @@ import * as actions from "../src/actions";
 import { Icon } from "expo";
 
 import CustomButton from "./CustomButton";
+import CustomOverlay from "./CustomOverlay";
 
 const BackgroundPoster = props => {
+  const renderInfoWindow = () => {
+    console.log(props.movie.name);
+    return <CustomOverlay visible={false} />;
+  };
+
   console.log(props);
   return props.movie.name ? (
     <React.Fragment>
@@ -28,7 +34,7 @@ const BackgroundPoster = props => {
           adjustsFontSizeToFit
           numberOfLines={1}
           style={styles.title}
-          onPress={() => console.log("hello")}
+          onPress={() => renderInfoWindow()}
         >
           {props.movie.name + " "}
           <Icon.Ionicons
@@ -43,6 +49,7 @@ const BackgroundPoster = props => {
           />
         </Text>
       </View>
+      {renderInfoWindow()}
     </React.Fragment>
   ) : (
     <CustomButton text={"Try Your Luck!"} style={styles.firstButton} />
@@ -91,24 +98,3 @@ export default connect(
   mapStateToProps,
   actions
 )(BackgroundPoster);
-
-// retired fixed info button component
-{
-  /* <Icon.Ionicons
-  name={
-    Platform.OS === "ios"
-      ? "ios-information-circle"
-      : "md-information-circle"
-  }
-  size={35}
-  style={{
-    position: "absolute",
-    top: "13.1%",
-    right: "3%"
-  }}
-  color={"#C3073F"}
-  onPress={() => {
-    console.log("hello");
-  }}
-/> */
-}
