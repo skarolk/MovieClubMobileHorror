@@ -24,7 +24,12 @@ const BackgroundPoster = props => {
         <CustomButton text={"Try Your Luck!"} />
       </ImageBackground>
       <View style={styles.titleContainer} pointerEvent="box-only">
-        <Text adjustsFontSizeToFit numberOfLines={1} style={styles.title}>
+        <Text
+          adjustsFontSizeToFit
+          numberOfLines={1}
+          style={styles.title}
+          onPress={() => console.log("hello")}
+        >
           {props.movie.name + " "}
           <Icon.Ionicons
             name={
@@ -35,7 +40,6 @@ const BackgroundPoster = props => {
             size={32}
             color={"#C3073F"}
             style={{ zIndex: 100 }}
-            onPress={() => console.log("hello")}
           />
         </Text>
       </View>
