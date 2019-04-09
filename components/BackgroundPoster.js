@@ -74,7 +74,13 @@ class BackgroundPoster extends React.Component {
         {this.renderInfoWindow()}
       </React.Fragment>
     ) : (
-      <CustomButton text={"Try Your Luck!"} style={styles.firstButton} />
+      <ImageBackground
+        source={{}}
+        style={styles.imageContainer}
+        imageStyle={styles.logo}
+      >
+        <CustomButton text={"Try Your Luck!"} style={styles.firstButton} />
+      </ImageBackground>
     );
   }
 }
@@ -86,6 +92,10 @@ const styles = StyleSheet.create({
   image: {
     resizeMode: "cover",
     backgroundColor: "black"
+  },
+  logo: {
+    resizeMode: "contain",
+    backgroundColor: "rgba(26,26,29,1)"
   },
   titleContainer: {
     backgroundColor: "rgba(26,26,29,.75)",
