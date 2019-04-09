@@ -1,11 +1,20 @@
 import React from "react";
-import { Text, StyleSheet, View } from "react-native";
+import { Text, StyleSheet, View, Linking } from "react-native";
 import { Overlay, Button } from "react-native-elements";
 import { connect } from "react-redux";
 import * as actions from "../src/actions";
 
 const CustomOverlay = props => {
-  console.log("hitting the custom overlay");
+  handleClick = () => {
+    Linking.canOpenURL(props.movie.trailer).then(supported => {
+      if (supported) {
+        Linking.openURL(props.movie.trailer);
+      } else {
+        console.log("Don't know how to open URI: " + props.movie.trailer);
+      }
+    });
+  };
+
   return (
     <Overlay
       isVisible={props.visible}
@@ -50,7 +59,8 @@ const CustomOverlay = props => {
             paddingRight: 40,
             paddingBottom: 12
           }}
-          title={"View Trailer!"}
+          title={"View Trailer"}
+          onPress={() => handleClick()}
         />
       </View>
     </Overlay>
@@ -62,7 +72,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "flex-end",
     alignItems: "center",
-    bottom: 17
+    bottom: 16
   }
 });
 

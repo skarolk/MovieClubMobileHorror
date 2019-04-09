@@ -23,7 +23,7 @@ class BackgroundPoster extends React.Component {
   }
 
   renderInfoWindow = () => {
-    console.log(this.props.movie.name);
+    // console.log(this.props.movie.name);
 
     return (
       <CustomOverlay
