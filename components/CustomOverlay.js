@@ -26,6 +26,7 @@ const CustomOverlay = props => {
     >
       <Text
         adjustsFontSizeToFit
+        numberOfLines={2}
         style={{
           color: "white",
           fontSize: 25,
@@ -38,6 +39,7 @@ const CustomOverlay = props => {
       </Text>
       <Text
         adjustsFontSizeToFit
+        numberOfLines={30}
         style={{
           color: "white",
           fontSize: 17,
