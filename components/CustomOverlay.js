@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text } from "react-native";
+import { Text, StyleSheet, View } from "react-native";
 import { Overlay, Button } from "react-native-elements";
 import { connect } from "react-redux";
 import * as actions from "../src/actions";
@@ -11,7 +11,7 @@ const CustomOverlay = props => {
       isVisible={props.visible}
       width="80%"
       height="60%"
-      overlayBackgroundColor="#1A1A1D"
+      overlayBackgroundColor="rgba(26,26,29,.95)"
       borderRadius="15"
       onBackdropPress={() => props.toggleInfoWindow()}
     >
@@ -19,11 +19,10 @@ const CustomOverlay = props => {
         adjustsFontSizeToFit
         style={{
           color: "white",
-          fontSize: 35,
+          fontSize: 25,
           textAlign: "center",
           textAlignVertical: "center",
-          paddingLeft: 20,
-          paddingRight: 20
+          paddingTop: 5
         }}
       >
         {props.movie.name}
@@ -32,18 +31,40 @@ const CustomOverlay = props => {
         adjustsFontSizeToFit
         style={{
           color: "white",
-          fontSize: 15,
-          textSlign: "justified"
+          fontSize: 17,
+          paddingTop: 13,
+          paddingRight: 10,
+          paddingBottom: 20,
+          paddingLeft: 10,
+          textAlign: "justify"
         }}
       >
         {props.movie.synopsis}
       </Text>
-      <Button title={"View Trailer!"} />
+      <View style={styles.button}>
+        <Button
+          buttonStyle={{
+            backgroundColor: "#C3073F",
+            borderRadius: 10,
+            paddingLeft: 40,
+            paddingRight: 40,
+            paddingBottom: 12
+          }}
+          title={"View Trailer!"}
+        />
+      </View>
     </Overlay>
   );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  button: {
+    flex: 1,
+    justifyContent: "flex-end",
+    alignItems: "center",
+    bottom: 15
+  }
+});
 
 const mapStateToProps = state => {
   return {
