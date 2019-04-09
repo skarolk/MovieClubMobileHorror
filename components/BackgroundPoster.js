@@ -75,7 +75,7 @@ class BackgroundPoster extends React.Component {
       </React.Fragment>
     ) : (
       <ImageBackground
-        source={{}}
+        source={require("../assets/images/smc_logo_final.png")}
         style={styles.imageContainer}
         imageStyle={styles.logo}
       >
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     backgroundColor: "black"
   },
   logo: {
-    resizeMode: "contain",
+    resizeMode: "center",
     backgroundColor: "rgba(26,26,29,1)"
   },
   titleContainer: {
