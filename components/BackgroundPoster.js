@@ -29,6 +29,7 @@ class BackgroundPoster extends React.Component {
       <CustomOverlay
         visible={this.state.toggledOverlay}
         toggleInfoWindow={this.toggleInfoWindow}
+        movie={this.props.movie}
       />
     );
   };
