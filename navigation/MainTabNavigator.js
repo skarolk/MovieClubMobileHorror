@@ -6,18 +6,18 @@ import {
 } from "react-navigation";
 
 import TabBarIcon from "../components/TabBarIcon";
-import HomeScreen from "../screens/HomeScreen";
+import ClubScreen from "../screens/ClubScreen";
 import MovieLotteryScreen from "../screens/MovieLotteryScreen";
-import SettingsScreen from "../screens/SettingsScreen";
+import RatingsScreen from "../screens/RatingsScreen";
 
 const tintColor = "#C3073F";
 const defaultColor = "white";
 
-const HomeStack = createStackNavigator({
-  Home: HomeScreen
+const ClubStack = createStackNavigator({
+  Club: ClubScreen
 });
 
-HomeStack.navigationOptions = {
+ClubStack.navigationOptions = {
   tabBarLabel: "Weekly Club",
   tabBarOptions: {
     activeTintColor: tintColor,
@@ -68,11 +68,11 @@ MovieLotteryStack.navigationOptions = {
   )
 };
 
-const SettingsStack = createStackNavigator({
-  Settings: SettingsScreen
+const RatingsStack = createStackNavigator({
+  Ratings: RatingsScreen
 });
 
-SettingsStack.navigationOptions = {
+RatingsStack.navigationOptions = {
   tabBarLabel: "Rate Movies",
   tabBarOptions: {
     activeTintColor: tintColor,
@@ -101,6 +101,6 @@ SettingsStack.navigationOptions = {
 // createMaterialTopTabNavigator
 export default createBottomTabNavigator({
   MovieLotteryStack,
-  HomeStack,
-  SettingsStack
+  ClubStack,
+  RatingsStack
 });
