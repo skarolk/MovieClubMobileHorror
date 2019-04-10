@@ -75,9 +75,9 @@ class BackgroundPoster extends React.Component {
       </React.Fragment>
     ) : (
       <ImageBackground
-        source={require("../assets/images/smc_logo_final.png")}
+        source={require("../assets/images/smlottery_background.png")}
         style={styles.imageContainer}
-        imageStyle={styles.logo}
+        imageStyle={styles.primaryBackground}
       >
         <CustomButton text={"Try Your Luck!"} style={styles.firstButton} />
       </ImageBackground>
@@ -93,8 +93,8 @@ const styles = StyleSheet.create({
     resizeMode: "cover",
     backgroundColor: "black"
   },
-  logo: {
-    resizeMode: "center",
+  primaryBackground: {
+    resizeMode: "cover",
     backgroundColor: "rgba(26,26,29,1)"
   },
   titleContainer: {
