@@ -1,9 +1,9 @@
 import React from "react";
 import { StyleSheet, ImageBackground } from "react-native";
 
-export default class RatingsScreen extends React.Component {
+export default class FavoritesScreen extends React.Component {
   static navigationOptions = {
-    title: "Rate Scary Movies",
+    title: "View Favorites",
     headerTitleStyle: {
       color: "white"
     },

@@ -8,7 +8,7 @@ import {
 import TabBarIcon from "../components/TabBarIcon";
 import ClubScreen from "../screens/ClubScreen";
 import MovieLotteryScreen from "../screens/MovieLotteryScreen";
-import RatingsScreen from "../screens/RatingsScreen";
+import FavoritesScreen from "../screens/FavoritesScreen";
 
 const tintColor = "#C3073F";
 const defaultColor = "white";
@@ -68,12 +68,12 @@ MovieLotteryStack.navigationOptions = {
   )
 };
 
-const RatingsStack = createStackNavigator({
-  Ratings: RatingsScreen
+const FavoritesStack = createStackNavigator({
+  Favorites: FavoritesScreen
 });
 
-RatingsStack.navigationOptions = {
-  tabBarLabel: "Rate Movies",
+FavoritesStack.navigationOptions = {
+  tabBarLabel: "Favorites",
   tabBarOptions: {
     activeTintColor: tintColor,
     inactiveTintColor: defaultColor,
@@ -100,7 +100,7 @@ RatingsStack.navigationOptions = {
 // render navbar on top or bottom
 // createMaterialTopTabNavigator
 export default createBottomTabNavigator({
-  MovieLotteryStack,
   ClubStack,
-  RatingsStack
+  MovieLotteryStack,
+  FavoritesStack
 });
