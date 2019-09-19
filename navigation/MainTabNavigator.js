@@ -99,8 +99,11 @@ FavoritesStack.navigationOptions = {
 
 // render navbar on top or bottom
 // createMaterialTopTabNavigator
-export default createBottomTabNavigator({
-  ClubStack,
-  MovieLotteryStack,
-  FavoritesStack
-});
+export default createBottomTabNavigator(
+  {
+    ClubStack,
+    MovieLotteryStack,
+    FavoritesStack
+  },
+  { initialRouteName: "MovieLotteryStack" }
+);
