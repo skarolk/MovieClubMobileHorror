@@ -11,7 +11,7 @@ export const getMovie = movie => {
 export const getRandomMovie = () => {
   return dispatch => {
     return axios
-      .get("http://localhost:4000/api/v1/movies/random")
+      .get("https://d3f924f6.ngrok.io/api/v1/movies/random")
       .then(response => {
         // console.log(
         //   "%cInside getRandomMovie:",
